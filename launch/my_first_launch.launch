@@ -1,0 +1,13 @@
+<launch>
+
+  <rosparam file = "$(find ros_exercises)/config/laser_params.yaml" />
+
+  <node pkg = "ros_exercises" type = "simple_publisher.py" name = "simple_publisher" />
+
+  <node pkg = "ros_exercises" type = "simple_subscriber.py" name = "simple_subscriber" />
+
+  <node pkg = "ros_exercises" type = "fake_scan_publisher.py" name = "fake_scan_publisher" />
+
+  <node pkg = "ros_exercises" type = "open_space_publisher.py" name = "open_space_publisher" />
+
+</launch>

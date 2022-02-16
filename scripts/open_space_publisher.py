@@ -6,7 +6,7 @@ from sensor_msgs.msg import LaserScan
 from ros_exercises.msg import OpenSpace
 from numpy import pi
 
-pub = rospy.Publisher("open_space", OpenSpace, queue_size=20)
+pub = rospy.Publisher(rospy.get_param('open_space/pub_topic', 'open_space'), OpenSpace, queue_size=20)
 
 def callback(scan):
     longest = max(scan.ranges) #longest range value
@@ -22,7 +22,7 @@ def callback(scan):
 def listen():
     rospy.init_node('open_space_publisher', anonymous = True)
     
-    rospy.Subscriber('fake_scan', LaserScan, callback)
+    rospy.Subscriber(rospy.get_param('open_space/sub_topic', 'fake_scan'), LaserScan, callback)
 
     rospy.spin() #keeps python from exiting until node stops
 

@@ -1,0 +1,14 @@
+fake_scan: {
+  pub_topic: "fake_scan",
+  pub_rate: 20,
+  angle_min: (-2.0/3.0)*pi,
+  angle_max: (2.0/3.0)*pi,
+  range_min: 1.0,
+  range_max: 10.0,
+  angle_increment: (1.0/300.0)*pi,
+}
+
+open_space: {
+  sub_topic: "fake_scan",
+  pub_topic: "open_space",
+}
