@@ -9,7 +9,7 @@ from sensor_msgs.msg import LaserScan
 
 
 def talker():
-    pub = rospy.Publisher(rospy.get_param('fake_scan/pub_topic', 'fake_scan'), LaserScan, queue_size = 20)
+    pub = rospy.Publisher(rospy.get_param('fake_scan/pub_topic', '/fake_scan'), LaserScan, queue_size = 20)
     rospy.init_node('fake_scan_publisher', anonymous = True)
     rate = rospy.Rate(rospy.get_param('fake_scan/pub_rate', 20)) # 20hz
 
